@@ -1,14 +1,28 @@
-/* Reset Básico e Fontes */
+/* --- NOVO DESIGN: MODERNO E ELEGANTE --- */
+
+/* 1. Reset Básico e Configuração da Fonte */
+:root {
+    --primary-color: #4f46e5; /* Um roxo/índigo moderno */
+    --primary-hover: #4338ca;
+    --secondary-color: #1f2937; /* Cinza escuro para texto */
+    --light-gray: #f3f4f6; /* Fundo principal */
+    --border-color: #d1d5db;
+    --card-bg: #ffffff;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --star-color: #f59e0b;
+}
+
 body, h1, h2, h3, p, ul, li, form, input, button, select, textarea {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--light-gray);
+    color: var(--secondary-color);
     line-height: 1.6;
 }
 
@@ -18,12 +32,11 @@ body {
     margin: 0 auto;
 }
 
-/* Header */
+/* 2. Header Sofisticado */
 header {
-    background-color: #fff;
+    background-color: var(--card-bg);
     padding: 1rem 0;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 header .container {
@@ -34,178 +47,207 @@ header .container {
 
 header h1 {
     font-size: 1.5rem;
-    color: #007bff;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 header nav a {
     text-decoration: none;
-    color: #555;
+    color: #4b5563;
     margin-left: 1.5rem;
     font-weight: 500;
     transition: color 0.3s;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-out;
 }
 
 header nav a:hover {
-    color: #007bff;
+    color: var(--primary-color);
 }
 
-/* Main Content & Cards */
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* 3. Main Content & Cards Flutuantes */
 main {
-    padding: 2rem 0;
+    padding: 3rem 0;
 }
 
 .main-center {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 160px); /* Altura total - header/footer */
+    min-height: calc(100vh - 160px);
 }
 
 .card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
 }
 
-/* Formulários */
+.card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* 4. Formulários Modernos */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
-.form-group input, .form-group select {
+.form-group input, .form-group select, textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
 .radio-group {
     display: flex;
     gap: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.5rem;
 }
+
+.radio-group input { display: none; }
+.radio-group label {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.radio-group input:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
 
 .form-footer {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .form-footer a {
-    color: #007bff;
+    color: var(--primary-color);
     text-decoration: none;
+    font-weight: 500;
 }
+.form-footer a:hover { text-decoration: underline; }
 
 .error-message {
-    color: #d93025;
+    color: var(--error-color);
     font-size: 0.9rem;
     margin-bottom: 1rem;
     min-height: 1em;
 }
 
-/* Botões */
+/* 5. Botões Melhores */
 .btn {
     display: block;
     width: 100%;
     padding: 0.9rem;
     border: none;
-    border-radius: 4px;
-    background-color: #007bff;
+    border-radius: 8px;
+    background-color: var(--primary-color);
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
 }
+.btn:active { transform: translateY(0); }
 
-.btn-secondary {
-    background-color: #6c757d;
-}
-
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
+.btn-secondary { background-color: #374151; }
+.btn-secondary:hover { background-color: #1f2937; }
 .btn:disabled {
-    background-color: #ccc;
+    background-color: #9ca3af;
     cursor: not-allowed;
+    transform: none;
 }
 
-/* Utilitários */
-.hidden {
-    display: none;
-}
-
-/* Página de Busca */
+/* 6. Estilos das Páginas Específicas */
+/* Busca */
 .filtros-busca {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.filtros-busca input, .filtros-busca select {
-    flex-grow: 1;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.resultados-busca h3 {
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 0.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .card-prestador {
-    background: #fff;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
     display: flex;
-    align-items: center;
-    gap: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    gap: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-prestador:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .card-prestador img {
     border-radius: 50%;
     width: 80px;
     height: 80px;
+    object-fit: cover;
 }
 
-.info-prestador {
-    flex-grow: 1;
-}
+.avaliacao span { color: var(--star-color); }
 
-.info-prestador h4 {
-    margin-bottom: 0.25rem;
-    color: #007bff;
-}
-
-.avaliacao span {
-    color: #f8b400;
-}
-
-/* Página de Perfil */
+/* Perfil */
 .perfil-header {
     display: flex;
     gap: 2rem;
-    background: #fff;
+    background: var(--card-bg);
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 2rem;
 }
 
@@ -213,6 +255,7 @@ main {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .perfil-details {
@@ -222,9 +265,9 @@ main {
 }
 
 .perfil-sobre, .perfil-avaliacoes {
-    background: #fff;
+    background: var(--card-bg);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .avaliacao-item {
@@ -232,34 +275,19 @@ main {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 }
+.avaliacao-item:last-child { border-bottom: none; }
 
-.autor-avaliacao {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: right;
-}
-
-.deixar-avaliacao textarea {
-    width: 100%;
-    min-height: 80px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Painel e Planos de Assinatura */
+/* Painel e Planos */
 .planos-container {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .plano {
-    flex: 1;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -267,98 +295,42 @@ main {
 
 .plano:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .plano.destaque {
-    border-color: #007bff;
+    border-color: var(--primary-color);
     border-width: 2px;
 }
 
-.plano h4 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
 .plano .preco {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #007bff;
-    margin-bottom: 1rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0 1rem 0;
 }
+.plano ul { list-style: none; margin-bottom: 2rem; }
+.plano ul li { margin-bottom: 0.5rem; }
 
-.plano ul {
-    list-style: none;
-    margin-bottom: 1.5rem;
-}
-
-.plano ul li {
-    margin-bottom: 0.5rem;
-}
-
-.info-pagamento {
-    margin-top: 1rem;
-    font-size: 0.9em;
-    color: #666;
-    background-color: #f0f0f0;
-    padding: 0.8rem;
-    border-radius: 4px;
-}
-
-.admin-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-/* Footer */
+/* 7. Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: #e5e7eb;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
 }
 
-/* Responsividade */
+/* 8. Responsividade */
 @media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    header nav {
-        margin-top: 0.5rem;
-    }
-    
-    header nav a {
-        margin: 0 0.5rem;
-    }
-
-    .filtros-busca {
-        flex-direction: column;
-    }
-    
-    .card-prestador {
+    .card { padding: 1.5rem; }
+    header .container, .perfil-header, .card-prestador {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
-
-    .perfil-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .perfil-details {
-        grid-template-columns: 1fr;
-    }
-    
-    .planos-container {
-        flex-direction: column;
-    }
-    
-    .admin-actions {
-        flex-direction: column;
-    }
+    header nav { margin-top: 1rem; }
+    .perfil-details { grid-template-columns: 1fr; }
 }
+
+.hidden { display: none; }
