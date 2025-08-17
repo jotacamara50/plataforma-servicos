@@ -1,0 +1,364 @@
+/* Reset Básico e Fontes */
+body, h1, h2, h3, p, ul, li, form, input, button, select, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #007bff;
+}
+
+/* Main Content & Cards */
+main {
+    padding: 2rem 0;
+}
+
+.main-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px); /* Altura total - header/footer */
+}
+
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.form-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    min-height: 1em;
+}
+
+/* Botões */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Utilitários */
+.hidden {
+    display: none;
+}
+
+/* Página de Busca */
+.filtros-busca {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filtros-busca input, .filtros-busca select {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.resultados-busca h3 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+}
+
+.card-prestador {
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.card-prestador img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.info-prestador {
+    flex-grow: 1;
+}
+
+.info-prestador h4 {
+    margin-bottom: 0.25rem;
+    color: #007bff;
+}
+
+.avaliacao span {
+    color: #f8b400;
+}
+
+/* Página de Perfil */
+.perfil-header {
+    display: flex;
+    gap: 2rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.perfil-header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.perfil-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.perfil-sobre, .perfil-avaliacoes {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.avaliacao-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.autor-avaliacao {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: right;
+}
+
+.deixar-avaliacao textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Painel e Planos de Assinatura */
+.planos-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.plano {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plano:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.plano.destaque {
+    border-color: #007bff;
+    border-width: 2px;
+}
+
+.plano h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.plano .preco {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.plano ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.plano ul li {
+    margin-bottom: 0.5rem;
+}
+
+.info-pagamento {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    color: #666;
+    background-color: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 4px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header nav {
+        margin-top: 0.5rem;
+    }
+    
+    header nav a {
+        margin: 0 0.5rem;
+    }
+
+    .filtros-busca {
+        flex-direction: column;
+    }
+    
+    .card-prestador {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .perfil-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .perfil-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .planos-container {
+        flex-direction: column;
+    }
+    
+    .admin-actions {
+        flex-direction: column;
+    }
+}
