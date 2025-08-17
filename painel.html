@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Painel - Plataforma de Serviços</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Logo da Plataforma</h1>
+            <nav>
+                <a href="busca.html">Buscar Serviços</a>
+                <a href="#" id="logoutBtn">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2 id="welcomeMessage">Bem-vindo(a) ao seu painel!</h2>
+
+            <section class="card">
+                <h3>Minhas Informações</h3>
+                <p><strong>Nome:</strong> Usuário de Teste</p>
+                <p><strong>Email:</strong> usuario@teste.com</p>
+                <button class="btn btn-secondary">Editar Perfil</button>
+            </section>
+
+            <section class="card">
+                <h3>Meu Plano de Assinatura</h3>
+                <p>Para ter seu perfil listado e receber contatos, escolha um plano.</p>
+                <div class="planos-container">
+                    <div class="plano">
+                        <h4>Básico</h4>
+                        <p class="preco">R$ 29,90/mês</p>
+                        <ul>
+                            <li>Perfil visível na busca</li>
+                            <li>Até 10 contatos/mês</li>
+                            <li>Suporte por email</li>
+                        </ul>
+                        <button class="btn">Assinar (Simulação)</button>
+                    </div>
+                    <div class="plano destaque">
+                        <h4>Profissional</h4>
+                        <p class="preco">R$ 59,90/mês</p>
+                        <ul>
+                            <li>Destaque na busca</li>
+                            <li>Contatos ilimitados</li>
+                            <li>Suporte prioritário</li>
+                        </ul>
+                        <button class="btn">Assinar (Simulação)</button>
+                    </div>
+                </div>
+                <p class="info-pagamento">
+                    <strong>Atenção:</strong> A integração de pagamento (Stripe, Mercado Pago) requer um backend seguro.
+                    Este é apenas um protótipo visual.
+                </p>
+            </section>
+            
+             <section class="card">
+                <h3>Painel Administrativo (Simulação)</h3>
+                <p>Esta área seria visível apenas para administradores.</p>
+                <div class="admin-actions">
+                    <button class="btn btn-secondary">Gerenciar Usuários</button>
+                    <button class="btn btn-secondary">Moderar Avaliações</button>
+                    <button class="btn btn-secondary">Ver Estatísticas</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sua Plataforma de Serviços. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

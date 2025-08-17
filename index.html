@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Serviços - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Logo da Plataforma</h1>
+            <nav>
+                <a href="index.html">Login</a>
+                <a href="cadastro.html">Cadastre-se</a>
+                <a href="busca.html">Buscar Serviços</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-center">
+        <div class="card">
+            <h2>Acesse sua Conta</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div id="loginError" class="error-message"></div>
+                <button type="submit" class="btn">Entrar</button>
+                <div class="form-footer">
+                    <a href="#">Esqueceu sua senha?</a>
+                    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sua Plataforma de Serviços. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

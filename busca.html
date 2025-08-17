@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Prestadores - Plataforma de Serviços</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Logo da Plataforma</h1>
+            <nav>
+                <a href="index.html">Login</a>
+                <a href="painel.html">Meu Painel</a>
+                <a href="busca.html">Buscar Serviços</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Encontre o Profissional Ideal</h2>
+            <section class="filtros-busca">
+                <input type="text" placeholder="Qual serviço você precisa? Ex: Eletricista">
+                <input type="text" placeholder="Onde? Ex: São Paulo, SP">
+                <select>
+                    <option value="">Todas as Avaliações</option>
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆ & Acima</option>
+                    <option value="3">★★★☆☆ & Acima</option>
+                </select>
+                <button class="btn">Buscar</button>
+            </section>
+
+            <section class="resultados-busca">
+                <h3>Resultados para "Eletricista"</h3>
+                <div class="card-prestador">
+                    <img src="https://via.placeholder.com/100" alt="Foto do Prestador">
+                    <div class="info-prestador">
+                        <h4>João da Silva</h4>
+                        <p><strong>Especialidade:</strong> Instalações Elétricas</p>
+                        <p><strong>Localização:</strong> São Paulo, SP</p>
+                        <div class="avaliacao">
+                            <span>★★★★★</span> (123 Avaliações)
+                        </div>
+                    </div>
+                    <a href="perfil.html" class="btn btn-secondary">Ver Perfil</a>
+                </div>
+                <div class="card-prestador">
+                    <img src="https://via.placeholder.com/100" alt="Foto do Prestador">
+                    <div class="info-prestador">
+                        <h4>Maria Oliveira</h4>
+                        <p><strong>Especialidade:</strong> Reparos Elétricos Urgentes</p>
+                        <p><strong>Localização:</strong> São Paulo, SP</p>
+                        <div class="avaliacao">
+                            <span>★★★★☆</span> (88 Avaliações)
+                        </div>
+                    </div>
+                    <a href="perfil.html" class="btn btn-secondary">Ver Perfil</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sua Plataforma de Serviços. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
