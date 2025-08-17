@@ -17,20 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         cadastroForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Impede o envio real do formulário
-            const nome = document.getElementById('nome').value;
-            const email = document.getElementById('cad-email').value;
-            const senha = document.getElementById('cad-senha').value;
-            const errorDiv = document.getElementById('cadastroError');
-
-            if (!nome || !email || !senha) {
-                errorDiv.textContent = "Por favor, preencha todos os campos obrigatórios.";
-                return;
-            }
-
-            // Simulação de sucesso
+            e.preventDefault();
             alert('Cadastro realizado com sucesso! (Simulação)\nVocê será redirecionado para a página de login.');
-            window.location.href = 'index.html'; // Redireciona o usuário
+            window.location.href = 'index.html';
         });
     }
 
@@ -38,44 +27,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Impede o envio real
+            e.preventDefault();
             const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
             const errorDiv = document.getElementById('loginError');
 
-            // Validação simples (apenas para o protótipo)
+            // Validação para CLIENTE
             if (email === "cliente@teste.com" && senha === "1234") {
-                // Usamos localStorage para "lembrar" que o usuário está logado nesta simulação
                 localStorage.setItem('usuarioLogado', 'Cliente de Teste');
                 window.location.href = 'painel.html';
-            } else if (email === "admin@teste.com" && senha === "admin") {
-                localStorage.setItem('usuarioLogado', 'Administrador');
-                window.location.href = 'painel.html';
+            
+            // Validação para PRESTADOR (NOVO)
+            } else if (email === "prestador@teste.com" && senha === "1234") {
+                localStorage.setItem('usuarioLogado', 'Prestador de Teste');
+                window.location.href = 'painel-prestador.html'; // Redireciona para o painel do prestador
+                
             } else {
-                errorDiv.textContent = "Email ou senha inválidos. (Tente: cliente@teste.com | senha: 1234)";
+                errorDiv.textContent = "Email ou senha inválidos. (Tente: cliente@teste.com ou prestador@teste.com | senha: 1234)";
             }
         });
     }
 
-    // --- LÓGICA DO PAINEL ---
+    // --- LÓGICA DOS PAINÉIS (Cliente e Prestador) ---
     const welcomeMessage = document.getElementById('welcomeMessage');
     if (welcomeMessage) {
-        // Verifica se há um usuário "logado" no localStorage
         const usuario = localStorage.getItem('usuarioLogado');
         if (usuario) {
-            welcomeMessage.textContent = `Bem-vindo(a), ${usuario}!`;
+            // Personaliza a mensagem de boas-vindas
+            if (welcomeMessage.closest('body').querySelector('title').textContent.includes('Prestador')) {
+                 welcomeMessage.textContent = `Painel do Prestador`; // Mensagem para o prestador
+            } else {
+                 welcomeMessage.textContent = `Bem-vindo(a), ${usuario}!`; // Mensagem para o cliente
+            }
         } else {
-            // Se alguém acessar o painel sem "logar", redireciona
             alert("Você precisa fazer login para acessar esta página.");
             window.location.href = 'index.html';
         }
     }
     
+    // --- LÓGICA DE LOGOUT (Funciona em ambas as páginas) ---
     const logoutBtn = document.getElementById('logoutBtn');
     if(logoutBtn) {
         logoutBtn.addEventListener('click', function(e){
             e.preventDefault();
-            // Limpa a simulação de login
             localStorage.removeItem('usuarioLogado');
             alert("Você saiu da sua conta.");
             window.location.href = 'index.html';
